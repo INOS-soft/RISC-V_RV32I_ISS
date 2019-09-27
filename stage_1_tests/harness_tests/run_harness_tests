@@ -1,0 +1,5 @@
+#! /bin/bash
+
+for i in *.cmd; do
+    ../../rv32sim/rv32sim ${RV32SIM_FLAGS} < $i > ${i%.cmd}${RV32SIM_FLAGS// /}.log
+done

@@ -1,0 +1,55 @@
+Memory write word: address = 00002000, data = 006100e7, mask = ffffffff
+Memory read word: address = 00002000, data = 006100e7
+Fetch: pc = 00002000, ir = 006100e7
+jalr: rd = 1, rs1 = 2, immed_I = 00000006
+00800006
+00002004
+00800000
+Memory write word: address = 00002010, data = 005100e7, mask = ffffffff
+Memory read word: address = 00002010, data = 005100e7
+Fetch: pc = 00002010, ir = 005100e7
+jalr: rd = 1, rs1 = 2, immed_I = 00000005
+00800004
+00002014
+00800000
+Memory write word: address = 00002020, data = 006000e7, mask = ffffffff
+Memory read word: address = 00002020, data = 006000e7
+Fetch: pc = 00002020, ir = 006000e7
+jalr: rd = 1, rs1 = 0, immed_I = 00000006
+00000006
+00002024
+Memory write word: address = 00002030, data = 00610067, mask = ffffffff
+Memory read word: address = 00002030, data = 00610067
+Fetch: pc = 00002030, ir = 00610067
+jalr: rd = 0, rs1 = 2, immed_I = 00000006
+00800006
+00000000
+00800000
+Memory write word: address = 00002040, data = ffa100e7, mask = ffffffff
+Memory read word: address = 00002040, data = ffa100e7
+Fetch: pc = 00002040, ir = ffa100e7
+jalr: rd = 1, rs1 = 2, immed_I = fffffffa
+007ffffa
+00002044
+00800000
+Memory write word: address = 00002050, data = ffb100e7, mask = ffffffff
+Memory read word: address = 00002050, data = ffb100e7
+Fetch: pc = 00002050, ir = ffb100e7
+jalr: rd = 1, rs1 = 2, immed_I = fffffffb
+007ffffa
+00002054
+00800000
+Memory write word: address = 00002060, data = ffa000e7, mask = ffffffff
+Memory read word: address = 00002060, data = ffa000e7
+Fetch: pc = 00002060, ir = ffa000e7
+jalr: rd = 1, rs1 = 0, immed_I = fffffffa
+fffffffa
+00002064
+Memory write word: address = 00002070, data = ffa10067, mask = ffffffff
+Memory read word: address = 00002070, data = ffa10067
+Fetch: pc = 00002070, ir = ffa10067
+jalr: rd = 0, rs1 = 2, immed_I = fffffffa
+007ffffa
+00000000
+00800000
+Instructions executed: 8

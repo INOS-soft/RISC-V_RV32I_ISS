@@ -1,0 +1,97 @@
+
+compiled_test_random.elf:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00000000 <_start>:
+   0:	80000137          	lui	sp,0x80000
+   4:	00000413          	li	s0,0
+   8:	0e4000ef          	jal	ra,ec <main>
+   c:	00000067          	jr	zero # 0 <_start>
+
+00000010 <random>:
+  10:	fe010113          	addi	sp,sp,-32 # 7fffffe0 <__global_pointer$+0x7fffe690>
+  14:	00812e23          	sw	s0,28(sp)
+  18:	02010413          	addi	s0,sp,32
+  1c:	fea42623          	sw	a0,-20(s0)
+  20:	fec42783          	lw	a5,-20(s0)
+  24:	01f7d713          	srli	a4,a5,0x1f
+  28:	fec42783          	lw	a5,-20(s0)
+  2c:	0067d793          	srli	a5,a5,0x6
+  30:	00f74733          	xor	a4,a4,a5
+  34:	fec42783          	lw	a5,-20(s0)
+  38:	0047d793          	srli	a5,a5,0x4
+  3c:	00f74733          	xor	a4,a4,a5
+  40:	fec42783          	lw	a5,-20(s0)
+  44:	0027d793          	srli	a5,a5,0x2
+  48:	00f74733          	xor	a4,a4,a5
+  4c:	fec42783          	lw	a5,-20(s0)
+  50:	0017d793          	srli	a5,a5,0x1
+  54:	00f74733          	xor	a4,a4,a5
+  58:	fec42783          	lw	a5,-20(s0)
+  5c:	00f747b3          	xor	a5,a4,a5
+  60:	01f79713          	slli	a4,a5,0x1f
+  64:	fec42783          	lw	a5,-20(s0)
+  68:	0017d793          	srli	a5,a5,0x1
+  6c:	00f767b3          	or	a5,a4,a5
+  70:	fef42623          	sw	a5,-20(s0)
+  74:	fec42783          	lw	a5,-20(s0)
+  78:	00078513          	mv	a0,a5
+  7c:	01c12403          	lw	s0,28(sp)
+  80:	02010113          	addi	sp,sp,32
+  84:	00008067          	ret
+
+00000088 <random_n>:
+  88:	fd010113          	addi	sp,sp,-48
+  8c:	02112623          	sw	ra,44(sp)
+  90:	02812423          	sw	s0,40(sp)
+  94:	03010413          	addi	s0,sp,48
+  98:	fca42e23          	sw	a0,-36(s0)
+  9c:	fcb42c23          	sw	a1,-40(s0)
+  a0:	fdc42783          	lw	a5,-36(s0)
+  a4:	fef42423          	sw	a5,-24(s0)
+  a8:	fe042623          	sw	zero,-20(s0)
+  ac:	01c0006f          	j	c8 <random_n+0x40>
+  b0:	fe842503          	lw	a0,-24(s0)
+  b4:	f5dff0ef          	jal	ra,10 <random>
+  b8:	fea42423          	sw	a0,-24(s0)
+  bc:	fec42783          	lw	a5,-20(s0)
+  c0:	00178793          	addi	a5,a5,1
+  c4:	fef42623          	sw	a5,-20(s0)
+  c8:	fec42703          	lw	a4,-20(s0)
+  cc:	fd842783          	lw	a5,-40(s0)
+  d0:	fef760e3          	bltu	a4,a5,b0 <random_n+0x28>
+  d4:	fe842783          	lw	a5,-24(s0)
+  d8:	00078513          	mv	a0,a5
+  dc:	02c12083          	lw	ra,44(sp)
+  e0:	02812403          	lw	s0,40(sp)
+  e4:	03010113          	addi	sp,sp,48
+  e8:	00008067          	ret
+
+000000ec <main>:
+  ec:	fe010113          	addi	sp,sp,-32
+  f0:	00112e23          	sw	ra,28(sp)
+  f4:	00812c23          	sw	s0,24(sp)
+  f8:	02010413          	addi	s0,sp,32
+  fc:	123457b7          	lui	a5,0x12345
+ 100:	67878793          	addi	a5,a5,1656 # 12345678 <__global_pointer$+0x12343d28>
+ 104:	fef42623          	sw	a5,-20(s0)
+ 108:	06400793          	li	a5,100
+ 10c:	fef42423          	sw	a5,-24(s0)
+ 110:	fec42783          	lw	a5,-20(s0)
+ 114:	fe842703          	lw	a4,-24(s0)
+ 118:	00070593          	mv	a1,a4
+ 11c:	00078513          	mv	a0,a5
+ 120:	f69ff0ef          	jal	ra,88 <random_n>
+ 124:	00050713          	mv	a4,a0
+ 128:	f0e537b7          	lui	a5,0xf0e53
+ 12c:	5e778793          	addi	a5,a5,1511 # f0e535e7 <__global_pointer$+0xf0e51c97>
+ 130:	00f707b3          	add	a5,a4,a5
+ 134:	00f037b3          	snez	a5,a5
+ 138:	0ff7f793          	andi	a5,a5,255
+ 13c:	00078513          	mv	a0,a5
+ 140:	01c12083          	lw	ra,28(sp)
+ 144:	01812403          	lw	s0,24(sp)
+ 148:	02010113          	addi	sp,sp,32
+ 14c:	00008067          	ret

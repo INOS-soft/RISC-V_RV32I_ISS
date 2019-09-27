@@ -1,0 +1,31 @@
+Memory read word: address = 00000000, data = 00000000
+00000000
+Memory read word: address = 00002000, data = 00000000
+00000000
+Memory read word: address = 00004000, data = 00000000
+00000000
+Memory read word: address = 00100000, data = 00000000
+00000000
+Memory read word: address = 10000000, data = 00000000
+00000000
+Memory read word: address = 80000000, data = 00000000
+00000000
+Memory write word: address = 00000000, data = 13121110, mask = ffffffff
+Memory write word: address = 00002000, data = 23222120, mask = ffffffff
+Memory write word: address = 00004000, data = 33323130, mask = ffffffff
+Memory write word: address = 00100000, data = 43424140, mask = ffffffff
+Memory write word: address = 10000000, data = 53525150, mask = ffffffff
+Memory write word: address = 80000000, data = 63626160, mask = ffffffff
+Memory read word: address = 00000000, data = 13121110
+13121110
+Memory read word: address = 00002000, data = 23222120
+23222120
+Memory read word: address = 00004000, data = 33323130
+33323130
+Memory read word: address = 00100000, data = 43424140
+43424140
+Memory read word: address = 10000000, data = 53525150
+53525150
+Memory read word: address = 80000000, data = 63626160
+63626160
+Instructions executed: 0

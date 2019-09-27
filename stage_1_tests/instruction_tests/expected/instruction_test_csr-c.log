@@ -1,0 +1,11 @@
+160 bytes loaded, start address = 00000000
+Error: illegal instruction
+Error: illegal instruction
+Error: illegal instruction
+Error: illegal instruction
+Error: illegal instruction
+Error: illegal instruction
+Breakpoint reached at 00000000
+00000001
+Instructions executed: 40
+CPU cycle count: 35

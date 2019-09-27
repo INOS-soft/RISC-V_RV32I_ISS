@@ -1,0 +1,61 @@
+
+compiled_test_leaf.elf:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00000000 <_start>:
+   0:	80000137          	lui	sp,0x80000
+   4:	00000413          	li	s0,0
+   8:	058000ef          	jal	ra,60 <main>
+   c:	00000067          	jr	zero # 0 <_start>
+
+00000010 <leaf_example>:
+  10:	fd010113          	addi	sp,sp,-48 # 7fffffd0 <__global_pointer$+0x7fffe708>
+  14:	02812623          	sw	s0,44(sp)
+  18:	03010413          	addi	s0,sp,48
+  1c:	fca42e23          	sw	a0,-36(s0)
+  20:	fcb42c23          	sw	a1,-40(s0)
+  24:	fcc42a23          	sw	a2,-44(s0)
+  28:	fcd42823          	sw	a3,-48(s0)
+  2c:	fdc42703          	lw	a4,-36(s0)
+  30:	fd842783          	lw	a5,-40(s0)
+  34:	00f70733          	add	a4,a4,a5
+  38:	fd442683          	lw	a3,-44(s0)
+  3c:	fd042783          	lw	a5,-48(s0)
+  40:	00f687b3          	add	a5,a3,a5
+  44:	40f707b3          	sub	a5,a4,a5
+  48:	fef42623          	sw	a5,-20(s0)
+  4c:	fec42783          	lw	a5,-20(s0)
+  50:	00078513          	mv	a0,a5
+  54:	02c12403          	lw	s0,44(sp)
+  58:	03010113          	addi	sp,sp,48
+  5c:	00008067          	ret
+
+00000060 <main>:
+  60:	fe010113          	addi	sp,sp,-32
+  64:	00112e23          	sw	ra,28(sp)
+  68:	00812c23          	sw	s0,24(sp)
+  6c:	02010413          	addi	s0,sp,32
+  70:	01700793          	li	a5,23
+  74:	fef42623          	sw	a5,-20(s0)
+  78:	0f800793          	li	a5,248
+  7c:	fef42423          	sw	a5,-24(s0)
+  80:	01900793          	li	a5,25
+  84:	fef42223          	sw	a5,-28(s0)
+  88:	00f00793          	li	a5,15
+  8c:	fef42023          	sw	a5,-32(s0)
+  90:	fe042683          	lw	a3,-32(s0)
+  94:	fe442603          	lw	a2,-28(s0)
+  98:	fe842583          	lw	a1,-24(s0)
+  9c:	fec42503          	lw	a0,-20(s0)
+  a0:	f71ff0ef          	jal	ra,10 <leaf_example>
+  a4:	00050793          	mv	a5,a0
+  a8:	f1978793          	addi	a5,a5,-231
+  ac:	00f037b3          	snez	a5,a5
+  b0:	0ff7f793          	andi	a5,a5,255
+  b4:	00078513          	mv	a0,a5
+  b8:	01c12083          	lw	ra,28(sp)
+  bc:	01812403          	lw	s0,24(sp)
+  c0:	02010113          	addi	sp,sp,32
+  c4:	00008067          	ret

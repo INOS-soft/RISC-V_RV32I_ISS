@@ -1,0 +1,68 @@
+Memory write word: address = 00000000, data = 00000013, mask = 000000ff
+Memory write word: address = 00000000, data = 00000500, mask = 0000ff00
+Memory write word: address = 00000000, data = 00000000, mask = 00ff0000
+Memory write word: address = 00000000, data = 00000000, mask = ff000000
+Memory write word: address = 00000004, data = 000000b7, mask = 000000ff
+Memory write word: address = 00000004, data = 00006200, mask = 0000ff00
+Memory write word: address = 00000004, data = 005a0000, mask = 00ff0000
+Memory write word: address = 00000004, data = 5a000000, mask = ff000000
+Memory write word: address = 00000008, data = 00000093, mask = 000000ff
+Memory write word: address = 00000008, data = 00008200, mask = 0000ff00
+Memory write word: address = 00000008, data = 00a20000, mask = 00ff0000
+Memory write word: address = 00000008, data = a5000000, mask = ff000000
+Memory write word: address = 0000000c, data = 0000000f, mask = 000000ff
+Memory write word: address = 0000000c, data = 00000000, mask = 0000ff00
+Memory write word: address = 0000000c, data = 00f00000, mask = 00ff0000
+Memory write word: address = 0000000c, data = 0f000000, mask = ff000000
+Memory write word: address = 00000010, data = 000000b7, mask = 000000ff
+Memory write word: address = 00000010, data = 00006500, mask = 0000ff00
+Memory write word: address = 00000010, data = 005a0000, mask = 00ff0000
+Memory write word: address = 00000010, data = 5a000000, mask = ff000000
+Memory write word: address = 00000014, data = 00000093, mask = 000000ff
+Memory write word: address = 00000014, data = 00008500, mask = 0000ff00
+Memory write word: address = 00000014, data = 00a50000, mask = 00ff0000
+Memory write word: address = 00000014, data = a5000000, mask = ff000000
+Memory write word: address = 00000018, data = 00000063, mask = 000000ff
+Memory write word: address = 00000018, data = 00009400, mask = 0000ff00
+Memory write word: address = 00000018, data = 00b20000, mask = 00ff0000
+Memory write word: address = 00000018, data = 00000000, mask = ff000000
+Memory write word: address = 0000001c, data = 00000013, mask = 000000ff
+Memory write word: address = 0000001c, data = 00000500, mask = 0000ff00
+Memory write word: address = 0000001c, data = 00100000, mask = 00ff0000
+Memory write word: address = 0000001c, data = 00000000, mask = ff000000
+Memory write word: address = 00000020, data = 00000067, mask = 000000ff
+Memory write word: address = 00000020, data = 00000000, mask = 0000ff00
+Memory write word: address = 00000020, data = 00000000, mask = 00ff0000
+Memory write word: address = 00000020, data = 00000000, mask = ff000000
+36 bytes loaded, start address = 00000000
+Breakpoint set at 00000000
+Memory read word: address = 00000000, data = 00000513
+Fetch: pc = 00000000, ir = 00000513
+addi: rd = 10, rs1 = 0, immed_I = 00000000
+Memory read word: address = 00000004, data = 5a5a62b7
+Fetch: pc = 00000004, ir = 5a5a62b7
+lui: rd = 5, immed_U = 5a5a6000
+Memory read word: address = 00000008, data = a5a28293
+Fetch: pc = 00000008, ir = a5a28293
+addi: rd = 5, rs1 = 5, immed_I = fffffa5a
+Memory read word: address = 0000000c, data = 0ff0000f
+Fetch: pc = 0000000c, ir = 0ff0000f
+fence: no operation
+Memory read word: address = 00000010, data = 5a5a65b7
+Fetch: pc = 00000010, ir = 5a5a65b7
+lui: rd = 11, immed_U = 5a5a6000
+Memory read word: address = 00000014, data = a5a58593
+Fetch: pc = 00000014, ir = a5a58593
+addi: rd = 11, rs1 = 11, immed_I = fffffa5a
+Memory read word: address = 00000018, data = 00b29463
+Fetch: pc = 00000018, ir = 00b29463
+bne: rs1 = 5, rs2 = 11, immed_B = 00000008
+Memory read word: address = 0000001c, data = 00100513
+Fetch: pc = 0000001c, ir = 00100513
+addi: rd = 10, rs1 = 0, immed_I = 00000001
+Memory read word: address = 00000020, data = 00000067
+Fetch: pc = 00000020, ir = 00000067
+jalr: rd = 0, rs1 = 0, immed_I = 00000000
+Breakpoint reached at 00000000
+00000001
+Instructions executed: 9

@@ -1,0 +1,49 @@
+Memory write word: address = 00000000, data = 00000013, mask = ffffffff
+Memory write word: address = 00000004, data = 00000013, mask = ffffffff
+Memory write word: address = 00000008, data = 00000013, mask = ffffffff
+Memory write word: address = 0000000c, data = 00000013, mask = ffffffff
+Memory write word: address = 00002000, data = 00000013, mask = ffffffff
+Memory write word: address = 00002004, data = 00000013, mask = ffffffff
+Memory write word: address = 00002008, data = 00000013, mask = ffffffff
+Memory write word: address = 0000200c, data = 00000013, mask = ffffffff
+Breakpoint set at 00002004
+Memory read word: address = 00002000, data = 00000013
+Fetch: pc = 00002000, ir = 00000013
+addi: rd = 0, rs1 = 0, immed_I = 00000000
+Memory read word: address = 00002004, data = 00000013
+Fetch: pc = 00002004, ir = 00000013
+addi: rd = 0, rs1 = 0, immed_I = 00000000
+Memory read word: address = 00002008, data = 00000013
+Fetch: pc = 00002008, ir = 00000013
+addi: rd = 0, rs1 = 0, immed_I = 00000000
+Memory read word: address = 0000200c, data = 00000013
+Fetch: pc = 0000200c, ir = 00000013
+addi: rd = 0, rs1 = 0, immed_I = 00000000
+00002010
+Memory read word: address = 00002000, data = 00000013
+Fetch: pc = 00002000, ir = 00000013
+addi: rd = 0, rs1 = 0, immed_I = 00000000
+Breakpoint reached at 00002004
+00002004
+Breakpoint set at 00000004
+Memory read word: address = 00002000, data = 00000013
+Fetch: pc = 00002000, ir = 00000013
+addi: rd = 0, rs1 = 0, immed_I = 00000000
+Memory read word: address = 00002004, data = 00000013
+Fetch: pc = 00002004, ir = 00000013
+addi: rd = 0, rs1 = 0, immed_I = 00000000
+Memory read word: address = 00002008, data = 00000013
+Fetch: pc = 00002008, ir = 00000013
+addi: rd = 0, rs1 = 0, immed_I = 00000000
+0000200c
+Memory read word: address = 00000000, data = 00000013
+Fetch: pc = 00000000, ir = 00000013
+addi: rd = 0, rs1 = 0, immed_I = 00000000
+Memory read word: address = 00000004, data = 00000013
+Fetch: pc = 00000004, ir = 00000013
+addi: rd = 0, rs1 = 0, immed_I = 00000000
+Memory read word: address = 00000008, data = 00000013
+Fetch: pc = 00000008, ir = 00000013
+addi: rd = 0, rs1 = 0, immed_I = 00000000
+0000000c
+Instructions executed: 11

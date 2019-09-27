@@ -1,0 +1,6 @@
+36 bytes loaded, start address = 00000000
+ecall: not implemented
+Breakpoint reached at 00000000
+00000001
+Instructions executed: 9
+CPU cycle count: 9

@@ -1,0 +1,11 @@
+Memory write word: address = 00002000, data = 5a5a6137, mask = ffffffff
+Memory read word: address = 00002000, data = 5a5a6137
+Fetch: pc = 00002000, ir = 5a5a6137
+lui: rd = 2, immed_U = 5a5a6000
+5a5a6000
+Memory write word: address = 00002010, data = a5a53137, mask = ffffffff
+Memory read word: address = 00002010, data = a5a53137
+Fetch: pc = 00002010, ir = a5a53137
+lui: rd = 2, immed_U = a5a53000
+a5a53000
+Instructions executed: 2

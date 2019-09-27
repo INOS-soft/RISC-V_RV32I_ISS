@@ -1,0 +1,68 @@
+
+instruction_test_sh.elf:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00000000 <_start>:
+   0:	00000513          	addi	a0,zero,0
+   4:	b0a093b7          	lui	t2,0xb0a09
+   8:	08038393          	addi	t2,t2,128 # b0a09080 <__global_pointer$+0xb09f87d0>
+   c:	00010297          	auipc	t0,0x10
+  10:	ffc28293          	addi	t0,t0,-4 # 10008 <mem01+0x8>
+  14:	00729023          	sh	t2,0(t0)
+  18:	00010e17          	auipc	t3,0x10
+  1c:	fe8e0e13          	addi	t3,t3,-24 # 10000 <mem01>
+  20:	008e2303          	lw	t1,8(t3)
+  24:	3b3a95b7          	lui	a1,0x3b3a9
+  28:	08058593          	addi	a1,a1,128 # 3b3a9080 <__global_pointer$+0x3b3987d0>
+  2c:	0ab31e63          	bne	t1,a1,e8 <_test_finish>
+  30:	00010297          	auipc	t0,0x10
+  34:	fe828293          	addi	t0,t0,-24 # 10018 <mem02+0x8>
+  38:	00729123          	sh	t2,2(t0)
+  3c:	00010e17          	auipc	t3,0x10
+  40:	fd4e0e13          	addi	t3,t3,-44 # 10010 <mem02>
+  44:	008e2303          	lw	t1,8(t3)
+  48:	908045b7          	lui	a1,0x90804
+  4c:	93858593          	addi	a1,a1,-1736 # 90803938 <__global_pointer$+0x907f3088>
+  50:	08b31c63          	bne	t1,a1,e8 <_test_finish>
+  54:	00010297          	auipc	t0,0x10
+  58:	fd428293          	addi	t0,t0,-44 # 10028 <mem03+0x8>
+  5c:	fe729f23          	sh	t2,-2(t0)
+  60:	00010e17          	auipc	t3,0x10
+  64:	fc0e0e13          	addi	t3,t3,-64 # 10020 <mem03>
+  68:	004e2303          	lw	t1,4(t3)
+  6c:	908035b7          	lui	a1,0x90803
+  70:	53458593          	addi	a1,a1,1332 # 90803534 <__global_pointer$+0x907f2c84>
+  74:	06b31a63          	bne	t1,a1,e8 <_test_finish>
+  78:	00010297          	auipc	t0,0x10
+  7c:	fbe28293          	addi	t0,t0,-66 # 10036 <mem04+0x6>
+  80:	00729023          	sh	t2,0(t0)
+  84:	00010e17          	auipc	t3,0x10
+  88:	face0e13          	addi	t3,t3,-84 # 10030 <mem04>
+  8c:	004e2303          	lw	t1,4(t3)
+  90:	908035b7          	lui	a1,0x90803
+  94:	53458593          	addi	a1,a1,1332 # 90803534 <__global_pointer$+0x907f2c84>
+  98:	04b31863          	bne	t1,a1,e8 <_test_finish>
+  9c:	00010297          	auipc	t0,0x10
+  a0:	fad28293          	addi	t0,t0,-83 # 10049 <mem05+0x9>
+  a4:	007290a3          	sh	t2,1(t0)
+  a8:	00010e17          	auipc	t3,0x10
+  ac:	f98e0e13          	addi	t3,t3,-104 # 10040 <mem05>
+  b0:	008e2303          	lw	t1,8(t3)
+  b4:	908045b7          	lui	a1,0x90804
+  b8:	93858593          	addi	a1,a1,-1736 # 90803938 <__global_pointer$+0x907f3088>
+  bc:	02b31663          	bne	t1,a1,e8 <_test_finish>
+  c0:	00010297          	auipc	t0,0x10
+  c4:	f9d28293          	addi	t0,t0,-99 # 1005d <mem06+0xd>
+  c8:	fe729fa3          	sh	t2,-1(t0)
+  cc:	00010e17          	auipc	t3,0x10
+  d0:	f84e0e13          	addi	t3,t3,-124 # 10050 <mem06>
+  d4:	00ce2303          	lw	t1,12(t3)
+  d8:	3f3e95b7          	lui	a1,0x3f3e9
+  dc:	08058593          	addi	a1,a1,128 # 3f3e9080 <__global_pointer$+0x3f3d87d0>
+  e0:	00b31463          	bne	t1,a1,e8 <_test_finish>
+  e4:	00100513          	addi	a0,zero,1
+
+000000e8 <_test_finish>:
+  e8:	00000067          	jalr	zero,0(zero) # 0 <_start>

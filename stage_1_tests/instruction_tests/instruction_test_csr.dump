@@ -1,0 +1,49 @@
+
+instruction_test_csr.elf:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00000000 <_start>:
+   0:	00000513          	addi	a0,zero,0
+   4:	090912b7          	lui	t0,0x9091
+   8:	90928293          	addi	t0,t0,-1783 # 9090909 <__global_pointer$+0x908f069>
+   c:	5a5a6337          	lui	t1,0x5a5a6
+  10:	a5a30313          	addi	t1,t1,-1446 # 5a5a5a5a <__global_pointer$+0x5a5a41ba>
+  14:	f1229373          	csrrw	t1,marchid,t0
+  18:	090915b7          	lui	a1,0x9091
+  1c:	90958593          	addi	a1,a1,-1783 # 9090909 <__global_pointer$+0x908f069>
+  20:	06b29e63          	bne	t0,a1,9c <_test_finish>
+  24:	5a5a65b7          	lui	a1,0x5a5a6
+  28:	a5a58593          	addi	a1,a1,-1446 # 5a5a5a5a <__global_pointer$+0x5a5a41ba>
+  2c:	06b31863          	bne	t1,a1,9c <_test_finish>
+  30:	f122a373          	csrrs	t1,marchid,t0
+  34:	090915b7          	lui	a1,0x9091
+  38:	90958593          	addi	a1,a1,-1783 # 9090909 <__global_pointer$+0x908f069>
+  3c:	06b29063          	bne	t0,a1,9c <_test_finish>
+  40:	5a5a65b7          	lui	a1,0x5a5a6
+  44:	a5a58593          	addi	a1,a1,-1446 # 5a5a5a5a <__global_pointer$+0x5a5a41ba>
+  48:	04b31a63          	bne	t1,a1,9c <_test_finish>
+  4c:	f122b373          	csrrc	t1,marchid,t0
+  50:	090915b7          	lui	a1,0x9091
+  54:	90958593          	addi	a1,a1,-1783 # 9090909 <__global_pointer$+0x908f069>
+  58:	04b29263          	bne	t0,a1,9c <_test_finish>
+  5c:	5a5a65b7          	lui	a1,0x5a5a6
+  60:	a5a58593          	addi	a1,a1,-1446 # 5a5a5a5a <__global_pointer$+0x5a5a41ba>
+  64:	02b31c63          	bne	t1,a1,9c <_test_finish>
+  68:	f124d373          	csrrwi	t1,marchid,9
+  6c:	5a5a65b7          	lui	a1,0x5a5a6
+  70:	a5a58593          	addi	a1,a1,-1446 # 5a5a5a5a <__global_pointer$+0x5a5a41ba>
+  74:	02b31463          	bne	t1,a1,9c <_test_finish>
+  78:	f124e373          	csrrsi	t1,marchid,9
+  7c:	5a5a65b7          	lui	a1,0x5a5a6
+  80:	a5a58593          	addi	a1,a1,-1446 # 5a5a5a5a <__global_pointer$+0x5a5a41ba>
+  84:	00b31c63          	bne	t1,a1,9c <_test_finish>
+  88:	f124f373          	csrrci	t1,marchid,9
+  8c:	5a5a65b7          	lui	a1,0x5a5a6
+  90:	a5a58593          	addi	a1,a1,-1446 # 5a5a5a5a <__global_pointer$+0x5a5a41ba>
+  94:	00b31463          	bne	t1,a1,9c <_test_finish>
+  98:	00100513          	addi	a0,zero,1
+
+0000009c <_test_finish>:
+  9c:	00000067          	jalr	zero,0(zero) # 0 <_start>

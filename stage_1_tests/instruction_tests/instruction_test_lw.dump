@@ -1,0 +1,72 @@
+
+instruction_test_lw.elf:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00000000 <_start>:
+   0:	00000513          	addi	a0,zero,0
+   4:	00010297          	auipc	t0,0x10
+   8:	00428293          	addi	t0,t0,4 # 10008 <pos+0x8>
+   c:	0002a303          	lw	t1,0(t0)
+  10:	3b3a45b7          	lui	a1,0x3b3a4
+  14:	93858593          	addi	a1,a1,-1736 # 3b3a3938 <__global_pointer$+0x3b393118>
+  18:	0eb31063          	bne	t1,a1,f8 <_test_finish>
+  1c:	00010297          	auipc	t0,0x10
+  20:	fec28293          	addi	t0,t0,-20 # 10008 <pos+0x8>
+  24:	0042a303          	lw	t1,4(t0)
+  28:	3f3e45b7          	lui	a1,0x3f3e4
+  2c:	d3c58593          	addi	a1,a1,-708 # 3f3e3d3c <__global_pointer$+0x3f3d351c>
+  30:	0cb31463          	bne	t1,a1,f8 <_test_finish>
+  34:	00010297          	auipc	t0,0x10
+  38:	fd428293          	addi	t0,t0,-44 # 10008 <pos+0x8>
+  3c:	ffc2a303          	lw	t1,-4(t0)
+  40:	373635b7          	lui	a1,0x37363
+  44:	53458593          	addi	a1,a1,1332 # 37363534 <__global_pointer$+0x37352d14>
+  48:	0ab31863          	bne	t1,a1,f8 <_test_finish>
+  4c:	00010297          	auipc	t0,0x10
+  50:	fb928293          	addi	t0,t0,-71 # 10005 <pos+0x5>
+  54:	0032a303          	lw	t1,3(t0)
+  58:	3b3a45b7          	lui	a1,0x3b3a4
+  5c:	93858593          	addi	a1,a1,-1736 # 3b3a3938 <__global_pointer$+0x3b393118>
+  60:	08b31c63          	bne	t1,a1,f8 <_test_finish>
+  64:	00010297          	auipc	t0,0x10
+  68:	fa128293          	addi	t0,t0,-95 # 10005 <pos+0x5>
+  6c:	fff2a303          	lw	t1,-1(t0)
+  70:	373635b7          	lui	a1,0x37363
+  74:	53458593          	addi	a1,a1,1332 # 37363534 <__global_pointer$+0x37352d14>
+  78:	08b31063          	bne	t1,a1,f8 <_test_finish>
+  7c:	00010297          	auipc	t0,0x10
+  80:	f9c28293          	addi	t0,t0,-100 # 10018 <neg+0x8>
+  84:	0002a303          	lw	t1,0(t0)
+  88:	fbfb05b7          	lui	a1,0xfbfb0
+  8c:	9f858593          	addi	a1,a1,-1544 # fbfaf9f8 <__global_pointer$+0xfbf9f1d8>
+  90:	06b31463          	bne	t1,a1,f8 <_test_finish>
+  94:	00010297          	auipc	t0,0x10
+  98:	f8428293          	addi	t0,t0,-124 # 10018 <neg+0x8>
+  9c:	0042a303          	lw	t1,4(t0)
+  a0:	ffff05b7          	lui	a1,0xffff0
+  a4:	dfc58593          	addi	a1,a1,-516 # fffefdfc <__global_pointer$+0xfffdf5dc>
+  a8:	04b31863          	bne	t1,a1,f8 <_test_finish>
+  ac:	00010297          	auipc	t0,0x10
+  b0:	f6c28293          	addi	t0,t0,-148 # 10018 <neg+0x8>
+  b4:	ffc2a303          	lw	t1,-4(t0)
+  b8:	f7f6f5b7          	lui	a1,0xf7f6f
+  bc:	5f458593          	addi	a1,a1,1524 # f7f6f5f4 <__global_pointer$+0xf7f5edd4>
+  c0:	02b31c63          	bne	t1,a1,f8 <_test_finish>
+  c4:	00010297          	auipc	t0,0x10
+  c8:	f4f28293          	addi	t0,t0,-177 # 10013 <neg+0x3>
+  cc:	0052a303          	lw	t1,5(t0)
+  d0:	fbfb05b7          	lui	a1,0xfbfb0
+  d4:	9f858593          	addi	a1,a1,-1544 # fbfaf9f8 <__global_pointer$+0xfbf9f1d8>
+  d8:	02b31063          	bne	t1,a1,f8 <_test_finish>
+  dc:	00010297          	auipc	t0,0x10
+  e0:	f3728293          	addi	t0,t0,-201 # 10013 <neg+0x3>
+  e4:	ffd2a303          	lw	t1,-3(t0)
+  e8:	f3f2f5b7          	lui	a1,0xf3f2f
+  ec:	1f058593          	addi	a1,a1,496 # f3f2f1f0 <__global_pointer$+0xf3f1e9d0>
+  f0:	00b31463          	bne	t1,a1,f8 <_test_finish>
+  f4:	00100513          	addi	a0,zero,1
+
+000000f8 <_test_finish>:
+  f8:	00000067          	jalr	zero,0(zero) # 0 <_start>

@@ -1,0 +1,5 @@
+# ignore compiled files:
+*.slo
+*.lo
+*.o
+*.obj

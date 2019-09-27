@@ -1,0 +1,67 @@
+
+compiled_test_fib.elf:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00000000 <_start>:
+   0:	80000137          	lui	sp,0x80000
+   4:	00000413          	li	s0,0
+   8:	088000ef          	jal	ra,90 <main>
+   c:	00000067          	jr	zero # 0 <_start>
+
+00000010 <fib>:
+  10:	fe010113          	addi	sp,sp,-32 # 7fffffe0 <__global_pointer$+0x7fffe700>
+  14:	00112e23          	sw	ra,28(sp)
+  18:	00812c23          	sw	s0,24(sp)
+  1c:	00912a23          	sw	s1,20(sp)
+  20:	02010413          	addi	s0,sp,32
+  24:	fea42623          	sw	a0,-20(s0)
+  28:	fec42783          	lw	a5,-20(s0)
+  2c:	00079663          	bnez	a5,38 <fib+0x28>
+  30:	00000793          	li	a5,0
+  34:	0440006f          	j	78 <fib+0x68>
+  38:	fec42703          	lw	a4,-20(s0)
+  3c:	00100793          	li	a5,1
+  40:	00f71663          	bne	a4,a5,4c <fib+0x3c>
+  44:	00100793          	li	a5,1
+  48:	0300006f          	j	78 <fib+0x68>
+  4c:	fec42783          	lw	a5,-20(s0)
+  50:	fff78793          	addi	a5,a5,-1
+  54:	00078513          	mv	a0,a5
+  58:	fb9ff0ef          	jal	ra,10 <fib>
+  5c:	00050493          	mv	s1,a0
+  60:	fec42783          	lw	a5,-20(s0)
+  64:	ffe78793          	addi	a5,a5,-2
+  68:	00078513          	mv	a0,a5
+  6c:	fa5ff0ef          	jal	ra,10 <fib>
+  70:	00050793          	mv	a5,a0
+  74:	00f487b3          	add	a5,s1,a5
+  78:	00078513          	mv	a0,a5
+  7c:	01c12083          	lw	ra,28(sp)
+  80:	01812403          	lw	s0,24(sp)
+  84:	01412483          	lw	s1,20(sp)
+  88:	02010113          	addi	sp,sp,32
+  8c:	00008067          	ret
+
+00000090 <main>:
+  90:	fe010113          	addi	sp,sp,-32
+  94:	00112e23          	sw	ra,28(sp)
+  98:	00812c23          	sw	s0,24(sp)
+  9c:	02010413          	addi	s0,sp,32
+  a0:	01900793          	li	a5,25
+  a4:	fef42623          	sw	a5,-20(s0)
+  a8:	fec42783          	lw	a5,-20(s0)
+  ac:	00078513          	mv	a0,a5
+  b0:	f61ff0ef          	jal	ra,10 <fib>
+  b4:	00050713          	mv	a4,a0
+  b8:	fffee7b7          	lui	a5,0xfffee
+  bc:	aef78793          	addi	a5,a5,-1297 # fffedaef <__global_pointer$+0xfffec20f>
+  c0:	00f707b3          	add	a5,a4,a5
+  c4:	00f037b3          	snez	a5,a5
+  c8:	0ff7f793          	andi	a5,a5,255
+  cc:	00078513          	mv	a0,a5
+  d0:	01c12083          	lw	ra,28(sp)
+  d4:	01812403          	lw	s0,24(sp)
+  d8:	02010113          	addi	sp,sp,32
+  dc:	00008067          	ret

@@ -1,0 +1,49 @@
+
+instruction_test_andi.elf:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00000000 <_start>:
+   0:	00000513          	addi	a0,zero,0
+   4:	5a5a62b7          	lui	t0,0x5a5a6
+   8:	a5a28293          	addi	t0,t0,-1446 # 5a5a5a5a <__global_pointer$+0x5a5a41ba>
+   c:	0002f313          	andi	t1,t0,0
+  10:	00000593          	addi	a1,zero,0
+  14:	08b31463          	bne	t1,a1,9c <_test_finish>
+  18:	a5a5a2b7          	lui	t0,0xa5a5a
+  1c:	5a528293          	addi	t0,t0,1445 # a5a5a5a5 <__global_pointer$+0xa5a58d05>
+  20:	0002f313          	andi	t1,t0,0
+  24:	00000593          	addi	a1,zero,0
+  28:	06b31a63          	bne	t1,a1,9c <_test_finish>
+  2c:	5a5a62b7          	lui	t0,0x5a5a6
+  30:	a5a28293          	addi	t0,t0,-1446 # 5a5a5a5a <__global_pointer$+0x5a5a41ba>
+  34:	00f2f313          	andi	t1,t0,15
+  38:	00a00593          	addi	a1,zero,10
+  3c:	06b31063          	bne	t1,a1,9c <_test_finish>
+  40:	a5a5a2b7          	lui	t0,0xa5a5a
+  44:	5a528293          	addi	t0,t0,1445 # a5a5a5a5 <__global_pointer$+0xa5a58d05>
+  48:	00f2f313          	andi	t1,t0,15
+  4c:	00500593          	addi	a1,zero,5
+  50:	04b31663          	bne	t1,a1,9c <_test_finish>
+  54:	5a5a62b7          	lui	t0,0x5a5a6
+  58:	a5a28293          	addi	t0,t0,-1446 # 5a5a5a5a <__global_pointer$+0x5a5a41ba>
+  5c:	f0f2f313          	andi	t1,t0,-241
+  60:	5a5a65b7          	lui	a1,0x5a5a6
+  64:	a0a58593          	addi	a1,a1,-1526 # 5a5a5a0a <__global_pointer$+0x5a5a416a>
+  68:	02b31a63          	bne	t1,a1,9c <_test_finish>
+  6c:	a5a5a2b7          	lui	t0,0xa5a5a
+  70:	5a528293          	addi	t0,t0,1445 # a5a5a5a5 <__global_pointer$+0xa5a58d05>
+  74:	f0f2f313          	andi	t1,t0,-241
+  78:	a5a5a5b7          	lui	a1,0xa5a5a
+  7c:	50558593          	addi	a1,a1,1285 # a5a5a505 <__global_pointer$+0xa5a58c65>
+  80:	00b31e63          	bne	t1,a1,9c <_test_finish>
+  84:	5a5a62b7          	lui	t0,0x5a5a6
+  88:	a5a28293          	addi	t0,t0,-1446 # 5a5a5a5a <__global_pointer$+0x5a5a41ba>
+  8c:	00f2f013          	andi	zero,t0,15
+  90:	00000593          	addi	a1,zero,0
+  94:	00b01463          	bne	zero,a1,9c <_test_finish>
+  98:	00100513          	addi	a0,zero,1
+
+0000009c <_test_finish>:
+  9c:	00000067          	jalr	zero,0(zero) # 0 <_start>

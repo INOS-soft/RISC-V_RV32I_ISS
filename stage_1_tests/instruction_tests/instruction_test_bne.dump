@@ -1,0 +1,108 @@
+
+instruction_test_bne.elf:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00000000 <_start>:
+   0:	00000513          	addi	a0,zero,0
+   4:	5a5a6437          	lui	s0,0x5a5a6
+   8:	a5a40413          	addi	s0,s0,-1446 # 5a5a5a5a <__global_pointer$+0x5a5a414e>
+   c:	a5a5a4b7          	lui	s1,0xa5a5a
+  10:	5a548493          	addi	s1,s1,1445 # a5a5a5a5 <__global_pointer$+0xa5a58c99>
+  14:	00941663          	bne	s0,s1,20 <L1_t>
+  18:	00000513          	addi	a0,zero,0
+  1c:	00000067          	jalr	zero,0(zero) # 0 <_start>
+
+00000020 <L1_t>:
+  20:	a5a5a937          	lui	s2,0xa5a5a
+  24:	5a590913          	addi	s2,s2,1445 # a5a5a5a5 <__global_pointer$+0xa5a58c99>
+  28:	5a5a69b7          	lui	s3,0x5a5a6
+  2c:	a5a98993          	addi	s3,s3,-1446 # 5a5a5a5a <__global_pointer$+0x5a5a414e>
+  30:	01391663          	bne	s2,s3,3c <L2_t>
+  34:	00000513          	addi	a0,zero,0
+  38:	00000067          	jalr	zero,0(zero) # 0 <_start>
+
+0000003c <L2_t>:
+  3c:	5a5a6437          	lui	s0,0x5a5a6
+  40:	a5a40413          	addi	s0,s0,-1446 # 5a5a5a5a <__global_pointer$+0x5a5a414e>
+  44:	5a5a64b7          	lui	s1,0x5a5a6
+  48:	a5a48493          	addi	s1,s1,-1446 # 5a5a5a5a <__global_pointer$+0x5a5a414e>
+  4c:	00941463          	bne	s0,s1,54 <L3_t>
+  50:	00c0006f          	jal	zero,5c <L3>
+
+00000054 <L3_t>:
+  54:	00000513          	addi	a0,zero,0
+  58:	00000067          	jalr	zero,0(zero) # 0 <_start>
+
+0000005c <L3>:
+  5c:	5a5a6937          	lui	s2,0x5a5a6
+  60:	a5a90913          	addi	s2,s2,-1446 # 5a5a5a5a <__global_pointer$+0x5a5a414e>
+  64:	5a5a69b7          	lui	s3,0x5a5a6
+  68:	a5a98993          	addi	s3,s3,-1446 # 5a5a5a5a <__global_pointer$+0x5a5a414e>
+  6c:	01391463          	bne	s2,s3,74 <L4_t>
+  70:	00c0006f          	jal	zero,7c <L4>
+
+00000074 <L4_t>:
+  74:	00000513          	addi	a0,zero,0
+  78:	00000067          	jalr	zero,0(zero) # 0 <_start>
+
+0000007c <L4>:
+  7c:	0080006f          	jal	zero,84 <L5>
+
+00000080 <L5_t>:
+  80:	0200006f          	jal	zero,a0 <L5_e>
+
+00000084 <L5>:
+  84:	5a5a6437          	lui	s0,0x5a5a6
+  88:	a5a40413          	addi	s0,s0,-1446 # 5a5a5a5a <__global_pointer$+0x5a5a414e>
+  8c:	a5a5a4b7          	lui	s1,0xa5a5a
+  90:	5a548493          	addi	s1,s1,1445 # a5a5a5a5 <__global_pointer$+0xa5a58c99>
+  94:	fe9416e3          	bne	s0,s1,80 <L5_t>
+  98:	00000513          	addi	a0,zero,0
+  9c:	00000067          	jalr	zero,0(zero) # 0 <_start>
+
+000000a0 <L5_e>:
+  a0:	0080006f          	jal	zero,a8 <L6>
+
+000000a4 <L6_t>:
+  a4:	0200006f          	jal	zero,c4 <L6_e>
+
+000000a8 <L6>:
+  a8:	a5a5a937          	lui	s2,0xa5a5a
+  ac:	5a590913          	addi	s2,s2,1445 # a5a5a5a5 <__global_pointer$+0xa5a58c99>
+  b0:	5a5a69b7          	lui	s3,0x5a5a6
+  b4:	a5a98993          	addi	s3,s3,-1446 # 5a5a5a5a <__global_pointer$+0x5a5a414e>
+  b8:	ff3916e3          	bne	s2,s3,a4 <L6_t>
+  bc:	00000513          	addi	a0,zero,0
+  c0:	00000067          	jalr	zero,0(zero) # 0 <_start>
+
+000000c4 <L6_e>:
+  c4:	00c0006f          	jal	zero,d0 <L7>
+
+000000c8 <L7_t>:
+  c8:	00000513          	addi	a0,zero,0
+  cc:	00000067          	jalr	zero,0(zero) # 0 <_start>
+
+000000d0 <L7>:
+  d0:	5a5a6437          	lui	s0,0x5a5a6
+  d4:	a5a40413          	addi	s0,s0,-1446 # 5a5a5a5a <__global_pointer$+0x5a5a414e>
+  d8:	5a5a64b7          	lui	s1,0x5a5a6
+  dc:	a5a48493          	addi	s1,s1,-1446 # 5a5a5a5a <__global_pointer$+0x5a5a414e>
+  e0:	fe9414e3          	bne	s0,s1,c8 <L7_t>
+  e4:	00c0006f          	jal	zero,f0 <L8>
+
+000000e8 <L8_t>:
+  e8:	00000513          	addi	a0,zero,0
+  ec:	00000067          	jalr	zero,0(zero) # 0 <_start>
+
+000000f0 <L8>:
+  f0:	5a5a6437          	lui	s0,0x5a5a6
+  f4:	a5a40413          	addi	s0,s0,-1446 # 5a5a5a5a <__global_pointer$+0x5a5a414e>
+  f8:	5a5a64b7          	lui	s1,0x5a5a6
+  fc:	a5a48493          	addi	s1,s1,-1446 # 5a5a5a5a <__global_pointer$+0x5a5a414e>
+ 100:	fe9414e3          	bne	s0,s1,e8 <L8_t>
+ 104:	00100513          	addi	a0,zero,1
+
+00000108 <_test_finish>:
+ 108:	00000067          	jalr	zero,0(zero) # 0 <_start>

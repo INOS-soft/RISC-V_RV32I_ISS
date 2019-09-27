@@ -1,0 +1,312 @@
+
+instruction_test_bltu.elf:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00000000 <_start>:
+   0:	00000513          	addi	a0,zero,0
+   4:	05a5a437          	lui	s0,0x5a5a
+   8:	5a540413          	addi	s0,s0,1445 # 5a5a5a5 <__global_pointer$+0x5a58a89>
+   c:	0a5a64b7          	lui	s1,0xa5a6
+  10:	a5a48493          	addi	s1,s1,-1446 # a5a5a5a <__global_pointer$+0xa5a3f3e>
+  14:	00946663          	bltu	s0,s1,20 <L01_t>
+  18:	00000513          	addi	a0,zero,0
+  1c:	00000067          	jalr	zero,0(zero) # 0 <_start>
+
+00000020 <L01_t>:
+  20:	a5a5a437          	lui	s0,0xa5a5a
+  24:	5a540413          	addi	s0,s0,1445 # a5a5a5a5 <__global_pointer$+0xa5a58a89>
+  28:	aa55b4b7          	lui	s1,0xaa55b
+  2c:	a5548493          	addi	s1,s1,-1451 # aa55aa55 <__global_pointer$+0xaa558f39>
+  30:	00946663          	bltu	s0,s1,3c <L02_t>
+  34:	00000513          	addi	a0,zero,0
+  38:	00000067          	jalr	zero,0(zero) # 0 <_start>
+
+0000003c <L02_t>:
+  3c:	5a5a6437          	lui	s0,0x5a5a6
+  40:	a5a40413          	addi	s0,s0,-1446 # 5a5a5a5a <__global_pointer$+0x5a5a3f3e>
+  44:	a5a5a4b7          	lui	s1,0xa5a5a
+  48:	5a548493          	addi	s1,s1,1445 # a5a5a5a5 <__global_pointer$+0xa5a58a89>
+  4c:	00946663          	bltu	s0,s1,58 <L03_t>
+  50:	00000513          	addi	a0,zero,0
+  54:	00000067          	jalr	zero,0(zero) # 0 <_start>
+
+00000058 <L03_t>:
+  58:	00000413          	addi	s0,zero,0
+  5c:	5a5a64b7          	lui	s1,0x5a5a6
+  60:	a5a48493          	addi	s1,s1,-1446 # 5a5a5a5a <__global_pointer$+0x5a5a3f3e>
+  64:	00946663          	bltu	s0,s1,70 <L04_t>
+  68:	00000513          	addi	a0,zero,0
+  6c:	00000067          	jalr	zero,0(zero) # 0 <_start>
+
+00000070 <L04_t>:
+  70:	00000413          	addi	s0,zero,0
+  74:	a5a5a4b7          	lui	s1,0xa5a5a
+  78:	5a548493          	addi	s1,s1,1445 # a5a5a5a5 <__global_pointer$+0xa5a58a89>
+  7c:	00946663          	bltu	s0,s1,88 <L05_t>
+  80:	00000513          	addi	a0,zero,0
+  84:	00000067          	jalr	zero,0(zero) # 0 <_start>
+
+00000088 <L05_t>:
+  88:	0a5a6437          	lui	s0,0xa5a6
+  8c:	a5a40413          	addi	s0,s0,-1446 # a5a5a5a <__global_pointer$+0xa5a3f3e>
+  90:	05a5a4b7          	lui	s1,0x5a5a
+  94:	5a548493          	addi	s1,s1,1445 # 5a5a5a5 <__global_pointer$+0x5a58a89>
+  98:	00946463          	bltu	s0,s1,a0 <L11_t>
+  9c:	00c0006f          	jal	zero,a8 <L11>
+
+000000a0 <L11_t>:
+  a0:	00000513          	addi	a0,zero,0
+  a4:	00000067          	jalr	zero,0(zero) # 0 <_start>
+
+000000a8 <L11>:
+  a8:	aa55b437          	lui	s0,0xaa55b
+  ac:	a5540413          	addi	s0,s0,-1451 # aa55aa55 <__global_pointer$+0xaa558f39>
+  b0:	a5a5a4b7          	lui	s1,0xa5a5a
+  b4:	5a548493          	addi	s1,s1,1445 # a5a5a5a5 <__global_pointer$+0xa5a58a89>
+  b8:	00946463          	bltu	s0,s1,c0 <L12_t>
+  bc:	00c0006f          	jal	zero,c8 <L12>
+
+000000c0 <L12_t>:
+  c0:	00000513          	addi	a0,zero,0
+  c4:	00000067          	jalr	zero,0(zero) # 0 <_start>
+
+000000c8 <L12>:
+  c8:	a5a5a437          	lui	s0,0xa5a5a
+  cc:	5a540413          	addi	s0,s0,1445 # a5a5a5a5 <__global_pointer$+0xa5a58a89>
+  d0:	5a5a64b7          	lui	s1,0x5a5a6
+  d4:	a5a48493          	addi	s1,s1,-1446 # 5a5a5a5a <__global_pointer$+0x5a5a3f3e>
+  d8:	00946463          	bltu	s0,s1,e0 <L13_t>
+  dc:	00c0006f          	jal	zero,e8 <L13>
+
+000000e0 <L13_t>:
+  e0:	00000513          	addi	a0,zero,0
+  e4:	00000067          	jalr	zero,0(zero) # 0 <_start>
+
+000000e8 <L13>:
+  e8:	5a5a6437          	lui	s0,0x5a5a6
+  ec:	a5a40413          	addi	s0,s0,-1446 # 5a5a5a5a <__global_pointer$+0x5a5a3f3e>
+  f0:	00000493          	addi	s1,zero,0
+  f4:	00946463          	bltu	s0,s1,fc <L14_t>
+  f8:	00c0006f          	jal	zero,104 <L14>
+
+000000fc <L14_t>:
+  fc:	00000513          	addi	a0,zero,0
+ 100:	00000067          	jalr	zero,0(zero) # 0 <_start>
+
+00000104 <L14>:
+ 104:	a5a5a437          	lui	s0,0xa5a5a
+ 108:	5a540413          	addi	s0,s0,1445 # a5a5a5a5 <__global_pointer$+0xa5a58a89>
+ 10c:	00000493          	addi	s1,zero,0
+ 110:	00946463          	bltu	s0,s1,118 <L15_t>
+ 114:	00c0006f          	jal	zero,120 <L15>
+
+00000118 <L15_t>:
+ 118:	00000513          	addi	a0,zero,0
+ 11c:	00000067          	jalr	zero,0(zero) # 0 <_start>
+
+00000120 <L15>:
+ 120:	5a5a6437          	lui	s0,0x5a5a6
+ 124:	a5a40413          	addi	s0,s0,-1446 # 5a5a5a5a <__global_pointer$+0x5a5a3f3e>
+ 128:	5a5a64b7          	lui	s1,0x5a5a6
+ 12c:	a5a48493          	addi	s1,s1,-1446 # 5a5a5a5a <__global_pointer$+0x5a5a3f3e>
+ 130:	00946463          	bltu	s0,s1,138 <L16_t>
+ 134:	00c0006f          	jal	zero,140 <L16>
+
+00000138 <L16_t>:
+ 138:	00000513          	addi	a0,zero,0
+ 13c:	00000067          	jalr	zero,0(zero) # 0 <_start>
+
+00000140 <L16>:
+ 140:	a5a5a437          	lui	s0,0xa5a5a
+ 144:	5a540413          	addi	s0,s0,1445 # a5a5a5a5 <__global_pointer$+0xa5a58a89>
+ 148:	a5a5a4b7          	lui	s1,0xa5a5a
+ 14c:	5a548493          	addi	s1,s1,1445 # a5a5a5a5 <__global_pointer$+0xa5a58a89>
+ 150:	00946463          	bltu	s0,s1,158 <L17_t>
+ 154:	00c0006f          	jal	zero,160 <L17>
+
+00000158 <L17_t>:
+ 158:	00000513          	addi	a0,zero,0
+ 15c:	00000067          	jalr	zero,0(zero) # 0 <_start>
+
+00000160 <L17>:
+ 160:	00000413          	addi	s0,zero,0
+ 164:	00000493          	addi	s1,zero,0
+ 168:	00946463          	bltu	s0,s1,170 <L18_t>
+ 16c:	00c0006f          	jal	zero,178 <L18>
+
+00000170 <L18_t>:
+ 170:	00000513          	addi	a0,zero,0
+ 174:	00000067          	jalr	zero,0(zero) # 0 <_start>
+
+00000178 <L18>:
+ 178:	0080006f          	jal	zero,180 <L21>
+
+0000017c <L21_t>:
+ 17c:	0200006f          	jal	zero,19c <L21_e>
+
+00000180 <L21>:
+ 180:	05a5a437          	lui	s0,0x5a5a
+ 184:	5a540413          	addi	s0,s0,1445 # 5a5a5a5 <__global_pointer$+0x5a58a89>
+ 188:	0a5a64b7          	lui	s1,0xa5a6
+ 18c:	a5a48493          	addi	s1,s1,-1446 # a5a5a5a <__global_pointer$+0xa5a3f3e>
+ 190:	fe9466e3          	bltu	s0,s1,17c <L21_t>
+ 194:	00000513          	addi	a0,zero,0
+ 198:	00000067          	jalr	zero,0(zero) # 0 <_start>
+
+0000019c <L21_e>:
+ 19c:	0080006f          	jal	zero,1a4 <L22>
+
+000001a0 <L22_t>:
+ 1a0:	0200006f          	jal	zero,1c0 <L22_e>
+
+000001a4 <L22>:
+ 1a4:	a5a5a437          	lui	s0,0xa5a5a
+ 1a8:	5a540413          	addi	s0,s0,1445 # a5a5a5a5 <__global_pointer$+0xa5a58a89>
+ 1ac:	aa55b4b7          	lui	s1,0xaa55b
+ 1b0:	a5548493          	addi	s1,s1,-1451 # aa55aa55 <__global_pointer$+0xaa558f39>
+ 1b4:	fe9466e3          	bltu	s0,s1,1a0 <L22_t>
+ 1b8:	00000513          	addi	a0,zero,0
+ 1bc:	00000067          	jalr	zero,0(zero) # 0 <_start>
+
+000001c0 <L22_e>:
+ 1c0:	0080006f          	jal	zero,1c8 <L23>
+
+000001c4 <L23_t>:
+ 1c4:	0200006f          	jal	zero,1e4 <L23_e>
+
+000001c8 <L23>:
+ 1c8:	5a5a6437          	lui	s0,0x5a5a6
+ 1cc:	a5a40413          	addi	s0,s0,-1446 # 5a5a5a5a <__global_pointer$+0x5a5a3f3e>
+ 1d0:	a5a5a4b7          	lui	s1,0xa5a5a
+ 1d4:	5a548493          	addi	s1,s1,1445 # a5a5a5a5 <__global_pointer$+0xa5a58a89>
+ 1d8:	fe9466e3          	bltu	s0,s1,1c4 <L23_t>
+ 1dc:	00000513          	addi	a0,zero,0
+ 1e0:	00000067          	jalr	zero,0(zero) # 0 <_start>
+
+000001e4 <L23_e>:
+ 1e4:	0080006f          	jal	zero,1ec <L24>
+
+000001e8 <L24_t>:
+ 1e8:	01c0006f          	jal	zero,204 <L24_e>
+
+000001ec <L24>:
+ 1ec:	00000413          	addi	s0,zero,0
+ 1f0:	5a5a64b7          	lui	s1,0x5a5a6
+ 1f4:	a5a48493          	addi	s1,s1,-1446 # 5a5a5a5a <__global_pointer$+0x5a5a3f3e>
+ 1f8:	fe9468e3          	bltu	s0,s1,1e8 <L24_t>
+ 1fc:	00000513          	addi	a0,zero,0
+ 200:	00000067          	jalr	zero,0(zero) # 0 <_start>
+
+00000204 <L24_e>:
+ 204:	0080006f          	jal	zero,20c <L25>
+
+00000208 <L25_t>:
+ 208:	01c0006f          	jal	zero,224 <L25_e>
+
+0000020c <L25>:
+ 20c:	00000413          	addi	s0,zero,0
+ 210:	a5a5a4b7          	lui	s1,0xa5a5a
+ 214:	5a548493          	addi	s1,s1,1445 # a5a5a5a5 <__global_pointer$+0xa5a58a89>
+ 218:	fe9468e3          	bltu	s0,s1,208 <L25_t>
+ 21c:	00000513          	addi	a0,zero,0
+ 220:	00000067          	jalr	zero,0(zero) # 0 <_start>
+
+00000224 <L25_e>:
+ 224:	00c0006f          	jal	zero,230 <L31>
+
+00000228 <L31_t>:
+ 228:	00000513          	addi	a0,zero,0
+ 22c:	00000067          	jalr	zero,0(zero) # 0 <_start>
+
+00000230 <L31>:
+ 230:	0a5a6437          	lui	s0,0xa5a6
+ 234:	a5a40413          	addi	s0,s0,-1446 # a5a5a5a <__global_pointer$+0xa5a3f3e>
+ 238:	05a5a4b7          	lui	s1,0x5a5a
+ 23c:	5a548493          	addi	s1,s1,1445 # 5a5a5a5 <__global_pointer$+0x5a58a89>
+ 240:	fe9464e3          	bltu	s0,s1,228 <L31_t>
+ 244:	00c0006f          	jal	zero,250 <L32>
+
+00000248 <L32_t>:
+ 248:	00000513          	addi	a0,zero,0
+ 24c:	00000067          	jalr	zero,0(zero) # 0 <_start>
+
+00000250 <L32>:
+ 250:	aa55b437          	lui	s0,0xaa55b
+ 254:	a5540413          	addi	s0,s0,-1451 # aa55aa55 <__global_pointer$+0xaa558f39>
+ 258:	a5a5a4b7          	lui	s1,0xa5a5a
+ 25c:	5a548493          	addi	s1,s1,1445 # a5a5a5a5 <__global_pointer$+0xa5a58a89>
+ 260:	fe9464e3          	bltu	s0,s1,248 <L32_t>
+ 264:	00c0006f          	jal	zero,270 <L33>
+
+00000268 <L33_t>:
+ 268:	00000513          	addi	a0,zero,0
+ 26c:	00000067          	jalr	zero,0(zero) # 0 <_start>
+
+00000270 <L33>:
+ 270:	a5a5a437          	lui	s0,0xa5a5a
+ 274:	5a540413          	addi	s0,s0,1445 # a5a5a5a5 <__global_pointer$+0xa5a58a89>
+ 278:	5a5a64b7          	lui	s1,0x5a5a6
+ 27c:	a5a48493          	addi	s1,s1,-1446 # 5a5a5a5a <__global_pointer$+0x5a5a3f3e>
+ 280:	fe9464e3          	bltu	s0,s1,268 <L33_t>
+ 284:	00c0006f          	jal	zero,290 <L34>
+
+00000288 <L34_t>:
+ 288:	00000513          	addi	a0,zero,0
+ 28c:	00000067          	jalr	zero,0(zero) # 0 <_start>
+
+00000290 <L34>:
+ 290:	5a5a6437          	lui	s0,0x5a5a6
+ 294:	a5a40413          	addi	s0,s0,-1446 # 5a5a5a5a <__global_pointer$+0x5a5a3f3e>
+ 298:	00000493          	addi	s1,zero,0
+ 29c:	fe9466e3          	bltu	s0,s1,288 <L34_t>
+ 2a0:	00c0006f          	jal	zero,2ac <L35>
+
+000002a4 <L35_t>:
+ 2a4:	00000513          	addi	a0,zero,0
+ 2a8:	00000067          	jalr	zero,0(zero) # 0 <_start>
+
+000002ac <L35>:
+ 2ac:	a5a5a437          	lui	s0,0xa5a5a
+ 2b0:	5a540413          	addi	s0,s0,1445 # a5a5a5a5 <__global_pointer$+0xa5a58a89>
+ 2b4:	00000493          	addi	s1,zero,0
+ 2b8:	fe9466e3          	bltu	s0,s1,2a4 <L35_t>
+ 2bc:	00c0006f          	jal	zero,2c8 <L36>
+
+000002c0 <L36_t>:
+ 2c0:	00000513          	addi	a0,zero,0
+ 2c4:	00000067          	jalr	zero,0(zero) # 0 <_start>
+
+000002c8 <L36>:
+ 2c8:	5a5a6437          	lui	s0,0x5a5a6
+ 2cc:	a5a40413          	addi	s0,s0,-1446 # 5a5a5a5a <__global_pointer$+0x5a5a3f3e>
+ 2d0:	5a5a64b7          	lui	s1,0x5a5a6
+ 2d4:	a5a48493          	addi	s1,s1,-1446 # 5a5a5a5a <__global_pointer$+0x5a5a3f3e>
+ 2d8:	fe9464e3          	bltu	s0,s1,2c0 <L36_t>
+ 2dc:	00c0006f          	jal	zero,2e8 <L37>
+
+000002e0 <L37_t>:
+ 2e0:	00000513          	addi	a0,zero,0
+ 2e4:	00000067          	jalr	zero,0(zero) # 0 <_start>
+
+000002e8 <L37>:
+ 2e8:	a5a5a437          	lui	s0,0xa5a5a
+ 2ec:	5a540413          	addi	s0,s0,1445 # a5a5a5a5 <__global_pointer$+0xa5a58a89>
+ 2f0:	a5a5a4b7          	lui	s1,0xa5a5a
+ 2f4:	5a548493          	addi	s1,s1,1445 # a5a5a5a5 <__global_pointer$+0xa5a58a89>
+ 2f8:	fe9464e3          	bltu	s0,s1,2e0 <L37_t>
+ 2fc:	00c0006f          	jal	zero,308 <L38>
+
+00000300 <L38_t>:
+ 300:	00000513          	addi	a0,zero,0
+ 304:	00000067          	jalr	zero,0(zero) # 0 <_start>
+
+00000308 <L38>:
+ 308:	00000413          	addi	s0,zero,0
+ 30c:	00000493          	addi	s1,zero,0
+ 310:	fe9468e3          	bltu	s0,s1,300 <L38_t>
+ 314:	00100513          	addi	a0,zero,1
+
+00000318 <_test_finish>:
+ 318:	00000067          	jalr	zero,0(zero) # 0 <_start>
