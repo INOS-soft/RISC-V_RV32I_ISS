@@ -1,0 +1,134 @@
+
+For Questions 1 to 11
+
+Questions 1 to 11 deal with the processor datapath and control shown in Figure 4.17 of the textbook, executing the following instruction, located at address 0x0000000000204014 in the instruction memory:
+
+sd x7, 0x18(x24)
+
+Q1: What is the value of the Branch control signal? 
+A: 0
+
+Q2: What is the value of the MemRead control signal?
+A: 0
+
+Q3: What is the value of the MemtoReg control signal?
+A: X
+
+Q4:  What is the value of the ALUOp control signal, expressed in binary?
+A: 00
+
+Q5: What is the value of the MemWrite control signal?
+A: 1
+
+Q6: What is the value of the ALUSrc control signal?
+A: 1
+
+Q7: What is the value of the RegWrite control signal?
+A: 0
+
+Q8: What is the output value of the ALU Control block, expressed in binary?
+A: 0010
+
+Q9: What is the output value of the ALU source multiplexer, expressed in hex? 
+A: 0x18 WRONG
+A: 0x0000000000000018
+
+Q10: What is the value of the Zero output flag of the ALU?
+A: 0
+
+Q11: What is the output value of the branch target adder, expressed in hex? 
+A: 0x0000000000204044
+
+For Questions 12 and 13
+
+Suppose the blocks in Figure 4.17 of the textbook have latencies shown in the following table.
+Block 	  Latency  
+PC read 	20ps
+PC setup 	15ps
+I-Mem 		250ps
+Add 		70ps
+Shift-left-1   	5ps
+Mux 		20ps
+Regs read 	150ps
+Regs setup 	15ps
+Imm Gen 	10ps
+ALU 		100ps
+D-Mem 		350ps
+Control 	80ps
+ALU Ctrl 	30ps
+
+
+
+
+Q12: What is the minimum clock period for this processor (in ps)?
+A: ld: PC-read -> I-Mem -> Regs-Read -> ALU -> D-Mem -> Mux -> Reg-Setup
+		20			250		150			100		350		20		15
+		= 905
+	sd:	PC-read -> I-Mem -> Regs-read -> Mux -> ALU -> D-Mem
+		20			250		150			  20	100		350
+		= 890
+
+Q13: Adding a multiplier to the ALU results in 100ps additional latency. However, it reduces the number of instructions needed in a program, since multiplications no longer need to be emulated in software. What fraction of the original instruction count must the reduced instruction count be to match the performance of the original processor?
+A: 905 WRONG 
+A:905/1005
+
+performance = IC * latency = A * IC * (100 + latency)
+				   latency = A * (100 + latency)
+					 	 A = latency / (100 + latency)
+					 	 A = 905 / (100 + 905)
+				
+
+
+
+
+
+For Questions 14 to 16
+
+A 5-stage pipelined version of the RISC-V processor has the following latencies for the stages, including the overhead for pipeline registers between stages:
+IF 		ID 		EX 		MEM 	WB
+500ps   300ps   400ps   600ps   100ps 
+
+Q14:  What is the maximum clock frequency (in GHz) for this processor?
+A: period = 1/freq => 1/(600*10^(=12)) = 1.67GHz
+
+Q15: Suppose you can divide the IF stage into two stages, each with latency 300ps, but with a cost increase of 5%. Similarly, you can divide the MEM stage into two stages, each with 350ps latency, but with cost increase of 5%. If you are only allowed to chose one of these options, what would the resulting maximum clock frequency be (in GHz)? 
+A:2
+
+Q16: If you are allowed to chose both options from Question 15 based on best cost/performance, decide whether to chose one or both options. What is the maximum clock frequency (in GHz) based on your choice? 
+A: 2.5
+
+
+Q17:
+Consider the following sequence of instructions executing in the 5-stage RISC-V pipeline without stalling:
+
+i1:  add  x7, x9, x20
+i2:  ld   x28, 12(x7)
+i3:  addi x29, x28, 1
+i4:  sd   x29, 12(x7)
+
+For each instruction and for each source operand, identify whether the operand is dependent on a previous instruction in the sequence and whether that presents a data hazard.
+A:
+i1: add x7, x9, x20  // register x7 written to by addi2: ld x28, 12(x7)     // base x7 depends on add, and output is to x28.                                   // This is a data hazardi3: addi x29, x28, 1  // source x28 depends on i2, data hazardi4: sd x29, 12(x7)   // base x7 depends on add. Assuming this instruction starts AT LEAST 4 cycles after i1 there are no hazards, as i1 writes back to register x7 in cycle 5 and i4 reads x7 in cycle 5. This should be ok as register setup times are usually much less than register read times.
+
+Q18: Draw a multicycle pipeline diagram showing execution of the code sequence from Question 17 in the 5-stage pipeline with full forwarding. Annotate your diagram to show where forwarding occurs.
+
+Please add your diagram as an embedded image in your answer for this question. You can also add explanatory text.
+A:
+
+Q19: Consider a variation of the 5-stage RISC-V pipeline in which the IF stage and the MEM stage share access to a single unified memory instead of having separate instruction and data memories. The pipeline executes the following sequence of instructions:
+
+add  x6, x8, x10
+ld   x7, 0(x11)
+addi x8, x8, 1
+andi x28, x7, 0xff
+slli x5, x8, 3
+
+Draw a multicycle pipeline diagram showing execution of the instruction sequence, including any stalls. Assume full forwarding.
+
+Please add your diagram as an embedded image in your answer for this question. You can also add explanatory text
+A:
+
+Q20: In Section 4.5 of the textbook, on page 272, it is suggested that the hardware for branch processing (register comparison, target address calculation and PC update) all be included in the second stage of the pipeline (the ID stage). What is the speedup of this hardware change compared to the pipelined datapath using the ALU and adder in the EX stage and completing the branch in the MEM stage? Assume that branches account for 17% of instructions, as suggested on page 270, that no branch prediction is used, that the average CPI for all other instructions is 1.2, and that there is no effect on clock period.
+A:1.25
+
+

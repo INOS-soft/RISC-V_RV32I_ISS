@@ -1,0 +1,12 @@
+CA reading week 5 quiz
+Q1: Both operands positive or negative
+Q2: An exception occurs WRONG 	
+Q3: 64
+Q4: True
+Q5: No, because we need to use the sign of the difference....
+Q6: 32 bits: 1 sign bit, 8 exponent bits, and 23 fraction bits
+Q7: 1.0000 0000 00*2^-14
+Q8: True
+Q9: Floating-point conditional branches
+	Floating-point arithmetic instructions
+Q10: By having 128 bit wide registers and a floating-point operations...

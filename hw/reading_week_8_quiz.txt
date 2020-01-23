@@ -1,0 +1,66 @@
+Q1: In the following RISC-V instruction sequence executed in the 5-stage pipeline, which instructions use forwarded data?
+
+i1:  sub  x2, x1, x3    # Register x2 written by sub
+i2:  and  x12, x2, x5   # 1st operand (x2) depends on sub
+i3:  or   x13, x6, x2   # 2nd operand (x2) depends on sub
+i4:  add  x14, x2, x2   # 1st (x2) and 2nd (x2) depend on sub
+i5:  sd   x15, 100(x2)  # Base (x2) depends on sub
+
+A: i2 and i3
+
+
+Q2: In the case of a load-use data hazard, how does the pipeline stall the instruction using the loaded data? 
+
+A: It prevents update of the PC and IF/ID pipeline registers, and sets the control values for EX, MEM and WB to 0 in the ID/EX pipeline register.
+
+Q3:  If branch computation is moved from the EX stage to the ID stage, forwarding paths are required from the EX/MEM and MEM/WB pipeline registers to the branch comparison logic in the ID stage.
+A: True
+
+
+Q4: Match the following descriptions to the correct terms. 
+A:
+
+Prediction of branches at runtime using runtime information. - Dynamic Branch Prediction
+
+A small memory that is indexed using the address of the branch instruction and that contains bits indicating whether the branch was recently taken or not. - Branch Prediction Buffer
+
+A structure that caches the destination PC or destination instruction for a branch. - Branch Target Buffer
+
+A branch predictor with multiple predictions for each branch and a selection mechanism that chooses which predictor to enable for a given branch. - Tournament Branch Prediction
+
+Q5:  Which of the following events would cause an exception or interrupt in a RISC-V computer system? 
+A:
+An undefined instruction
+An operating system request from a user program
+A request from an I/O device
+
+
+Q6:  In a static dual-issue processor with 5 pipeline stages, what is the maximum number of instructions that can be in progress at any time? 
+A: 10
+
+Q7: Loop unrolling is a technique to get more performance from loops that access arrays, in which multiple copies of the loop body are made and instructions from different iterations are scheduled together. 
+A: True
+
+Q8: Match the following descriptions to the defined terms. 
+
+Hardware support for reordering the order of instruction execution so as to avoid stalls. - Dynamic Scheduling
+
+A situation in pipelined execution when an instruction blocked from executing does not cause the following instructions to wait. - out of order execution
+
+A commit in which the results of pipelined execution are written to the programmer visible state in the same order that instructions are fetched. - in order commit
+
+The buffer that holds results in a dynamically scheduled processor until it is safe to store the results to memory or a register. - reorder buffer
+
+
+Q9: Which of the following correctly describes the ARM Cortex-A8 processor? 
+A: Dynamic multiple-issue, static in-order pipeline scheduling
+
+Q10: Which of the following correctly describes the Intel Core i7 920 processor?
+A: Dynamic multiple-issue, dynamic out-of-order pipeline scheduling
+
+
+
+
+
+
+

@@ -1,0 +1,46 @@
+Q1: 5.599
+Q2: 2.17
+Q3: 1.875
+Q4: 4
+Q5: 3.14
+Q6: or x18, x3, x5
+Q7: 0xFE853483
+Q8: 0xFF11140A11840040
+Q9: 
+andi x7, x10, 0x3F0
+srli x7, x7, 4
+Q10: 
+    bne x9, x18, else
+    addi x9, x9, 1
+    jal x1, done
+else:
+    addi x9, x9, -1
+done:
+
+Q11: if (m >= 0 && m < 20) my_func(m);
+Q12:
+min:
+    bge x11, x10, aReturn     // assume a in x10, b in x11
+    addi x10, x11, 0          // put b in return register position
+    jalr x0, 0(x1)               // return to caller
+aReturn:                              // if a < b
+    jalr x0, 0(x1)               // a already in x10 so just return to caller
+
+Q13:
+sum:
+    addi sp, sp, -16    // adjust SP for return address and n
+    sd x1, 8(sp)          // save return address on stack
+    sd x10, 0(sp)        // save n on stack
+    bge x10, x0, L1    // if n >= 0, go to L1
+    addi x10, x0, 0      // n < 0, so set return value to 0
+    jalr x0, 0(x1)
+L1:
+    addi x10, x10, -1    // decrement n
+    jal x1, sum              // store next instruction in x1 and call sum
+    addi x5, x10, 0        // copy n to t0
+    ld x10, 0(sp)           // move result of sum(n-1) to x5
+    ld x10, 0(sp)           // pop the stack twice, using values stored there
+    ld x1, 8(sp)              // 8 because we're using RV64I
+    addi sp, sp, 16
+    add x10, x10, x5      // This bit actually does the sum
+    jalr x0, 0(x1)            // result already in appropriate register so return

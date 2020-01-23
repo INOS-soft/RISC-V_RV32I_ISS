@@ -1,0 +1,12 @@
+Q1: A C string takes about half the space of the same string in Java
+Q2: 0xffffffffffffff81
+Q3: 0x345673B7
+Q4: 12 WRONG 8 WRONG
+Q5: Address from about 1M before the jal instruction to about 1M after
+Q6: When cooperating processes on a uniprocessor.... AND When cooperating threads
+	of a parallel program....
+Q7: The caller saves registers x8 - x9 and x18 - x27 that it needs after the call, arguments are passed in registers x10 - x17, registers x5 - x7 and x28 - x31 are not saved, results are returned in registers x10 - x11. WRONG
+Arguments are passed in registers x10 - x17, the callee saves registers x8 - x9 and x18 - x27 that it uses, registers x5 - x7 and x28 - x31 are not saved, results are returned in registers x10 - x11.
+Q8: False
+Q9: 2, 4, or 8 bytes WRONG from 1 to 15 bytes
+Q10: true
