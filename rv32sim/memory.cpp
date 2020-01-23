@@ -3,7 +3,11 @@
    Computer Architecture, Semester 1, 2019
 
    Class members for memory
-
+   
+   Written by:
+   Nathanael Whitrow
+   For feedback, comments and questions please contact me at:
+   nathanael.whitrow@gmail.com
 **************************************************************** */
 
 #pragma once
